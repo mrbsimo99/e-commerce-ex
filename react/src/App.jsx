@@ -30,17 +30,26 @@ function App() {
 
   const handleAddToCart = (product) => {
     setCart(prevCart => {
-      const productInCart = prevCart.find(item => item.id === product.id);
-      if (productInCart) {
-        return prevCart.map(item =>
-          item.id === product.id ? { ...item, qnt: item.qnt + 1 }
-            : item
-        );
-      } else {
-        return [...prevCart, { ...product, qnt: 1 }];
+
+      const newCart = [];
+      let productFound = false;
+
+      for (let i = 0; i < prevCart.length; i++) {
+        const item = prevCart[i];
+        if (item.id === product.id) {
+          newCart.push({ ...item, qnt: item.qnt + 1 });
+          productFound = true;
+        } else {
+          newCart.push(item);
+        }
       }
-    })
-  }
+      if (!productFound) {
+        newCart.push({ ...product, qnt: 1 });
+      }
+
+      return newCart;
+    });
+  };
 
   const handleRemoveFromCart = (productId) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId));
