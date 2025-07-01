@@ -48,7 +48,7 @@ function App() {
 
   return (
     <>
-      <div className="max-w-[1240px] mx-auto px-4 py-8">
+      <div className="max-w-[1240px] mx-auto px-4 py-8 ">
         <div className="flex gap-[40px]">
           <div className="flex-grow">
             <ProductList products={products} handleAddToCart={handleAddToCart} />

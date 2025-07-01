@@ -4,7 +4,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
 
     return (
         <>
-            <div className="border rounded-2xl shadow-md p-4 flex flex-col h-full">
+            <div className="border rounded-xl p-4 flex flex-col h-full mb-4">
                 <img
                     src={product.thumbnail}
                     alt={product.title}

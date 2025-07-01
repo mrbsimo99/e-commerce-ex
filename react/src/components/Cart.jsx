@@ -8,7 +8,7 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
     );
 
     return (
-        <div className="border rounded-2xl shadow-md p-6">
+        <div className="border rounded-xl p-6">
             <h2 className="text-lg font-medium text-gray-900">Carrello</h2>
 
             {cart.length === 0 ? (

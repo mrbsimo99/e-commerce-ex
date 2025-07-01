@@ -11,7 +11,7 @@ const ProductList = ({ products, handleAddToCart }) => {
                 {displayedProducts.map(product => (
                     <div
                         key={product.id}
-                        className="w-[calc(33%-2%)]"
+                        className="w-[calc(33%-2%)] mb-6"
                     >
                         <ProductCard product={product} handleAddToCart={handleAddToCart} />
                     </div>
