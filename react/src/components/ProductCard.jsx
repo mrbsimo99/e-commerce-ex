@@ -8,7 +8,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
                 <img
                     src={product.thumbnail}
                     alt={product.title}
-                    className="w-full h-48 object-cover rounded-xl mb-4"
+                    className="w-full h-64 object-cover rounded-xl mb-4"
                 />
                 <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
                 <div className="flex justify-between items-center mt-auto">
