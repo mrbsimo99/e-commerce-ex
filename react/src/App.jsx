@@ -28,10 +28,6 @@ function App() {
     fetchData();
   }, []);
 
-  const handleProducts = (id) => {
-    return products.find(product => product.id === id);
-  }
-
   const handleAddToCart = (product) => {
     setCart(prevCart => {
       const productInCart = prevCart.find(item => item.id === product.id);
@@ -53,15 +49,15 @@ function App() {
   return (
     <>
       <div className="max-w-[1240px] mx-auto px-4 py-8">
-    <div className="flex gap-[40px]">
-      <div className="flex-grow">
-        <ProductList products={products} handleAddToCart={handleAddToCart} />
+        <div className="flex gap-[40px]">
+          <div className="flex-grow">
+            <ProductList products={products} handleAddToCart={handleAddToCart} />
+          </div>
+          <div className="w-[250px]">
+            <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />
+          </div>
+        </div>
       </div>
-      <div className="w-[250px]">
-        <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />
-      </div>
-    </div>
-  </div>
     </>
   )
 
