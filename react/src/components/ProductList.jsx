@@ -3,12 +3,10 @@ import ProductCard from './ProductCard';
 
 const ProductList = ({ products, handleAddToCart }) => {
 
-    const displayedProducts = products.slice(0, 30);
-
     return (
         <>
             <div className="flex flex-wrap gap-[2%]">
-                {displayedProducts.map(product => (
+                {products.map(product => (
                     <div
                         key={product.id}
                         className="w-[calc(33%-2%)] mb-6"
