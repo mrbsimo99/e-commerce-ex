@@ -39,7 +39,9 @@ function App() {
         );
       } else {
 
-        return [...prevCart, { ...product, qnt: 1 }];
+        const newCart = [...prevCart];
+        newCart.push({ ...product, qnt: 1 });
+        return newCart;
       }
     });
   };
