@@ -30,24 +30,17 @@ function App() {
 
   const handleAddToCart = (product) => {
     setCart(prevCart => {
+      const productInCart = prevCart.find(item => item.id === product.id);
 
-      const newCart = [];
-      let productFound = false;
+      if (productInCart) {
 
-      for (let i = 0; i < prevCart.length; i++) {
-        const item = prevCart[i];
-        if (item.id === product.id) {
-          newCart.push({ ...item, qnt: item.qnt + 1 });
-          productFound = true;
-        } else {
-          newCart.push(item);
-        }
+        return prevCart.map(item =>
+          item.id === product.id ? { ...item, qnt: item.qnt + 1 } : item
+        );
+      } else {
+
+        return [...prevCart, { ...product, qnt: 1 }];
       }
-      if (!productFound) {
-        newCart.push({ ...product, qnt: 1 });
-      }
-
-      return newCart;
     });
   };
 
