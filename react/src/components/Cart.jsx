@@ -40,7 +40,7 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
                         ))}
                     </ul>
 
-                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                    <div className="border-t border-gray-200 px-4 py-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
                             <span>Totale: </span>
                             <span>${subtotal.toFixed(2)}</span>
